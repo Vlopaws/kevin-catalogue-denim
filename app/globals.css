@@ -18,3 +18,8 @@ main { max-width: 1000px; margin: 0 auto; padding: 24px 16px; }
 .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; color: #fff; background: #6b7280; }
 .badge.tres-rare { background: #b7791f; }
 .badge.exceptionnel { background: #9b2c2c; }
+
+.filtres { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.filtres input { flex: 1; min-width: 200px; }
+.filtres input, .filtres select, .filtres button { padding: 8px 10px; border: 1px solid #cbd2dc; border-radius: 6px; font: inherit; }
+.filtres button { background: #23395d; color: #fff; border-color: #23395d; cursor: pointer; }
