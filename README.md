@@ -1,6 +1,7 @@
 # Catalogue Denim
 
-Petit site vitrine de jeans vintage rares : grille de cartes, recherche, filtre par rareté, fiche de détail.
+Petit site vitrine de jeans et vestes en denim vintage rares : grille de cartes, recherche,
+filtre jean ou veste, fiche de détail avec prix, rareté et sources.
 Next.js (App Router, JavaScript) + `mysql2` sur TiDB Cloud (base `catalogue_denim`).
 
 ## En local
@@ -16,15 +17,23 @@ Next.js (App Router, JavaScript) + `mysql2` sur TiDB Cloud (base `catalogue_deni
    TIDB_DATABASE=catalogue_denim
    ```
 
-3. `npm run db:init` crée la table `jeans` et six exemples (ne fait rien si elle existe).
-4. `npm run dev`, puis http://localhost:3000
+3. `npm run dev`, puis http://localhost:3000
+
+## Données
+
+Le site lit la table `denim_item` (une ligne par pièce : nom, marque, époque, prix et devise,
+description, rareté, `image_url` et `image_source_page`). Les photos restent hébergées sur
+leur site d'origine, cité sur chaque fiche avec les sources ; une image de remplacement
+s'affiche si la photo manque ou si son site en refuse l'affichage.
+
+La base contient aussi le modèle relationnel `DENIM` / `MODELE` / `COTE`, décrit par le
+diagramme UML : [docs/uml.md](docs/uml.md).
 
 ## Fichiers
 
-- `lib/db.js` : connexion TLS et les deux requêtes (liste filtrée, un jean).
-- `app/page.js` : grille, recherche, filtre. `app/jean/[id]/page.js` : fiche.
-- `sql/schema.sql` : table et exemples. Les visuels provisoires sont dans `public/jeans/` ;
-  la colonne `photo` accepte aussi une URL d'image complète.
+- `lib/db.js` : connexion TLS et les deux requêtes (liste filtrée, une pièce).
+- `app/page.js` : grille, recherche, filtre. `app/piece/[id]/page.js` : fiche.
+- `app/photo.js` : image avec remplacement. `lib/format.js` : prix et libellés.
 
 ## Déploiement sur Vercel
 
