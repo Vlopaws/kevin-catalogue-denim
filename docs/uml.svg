@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 300" font-family="Arial, sans-serif" font-size="13">
+  <rect width="1040" height="300" fill="#fff"/>
+  <text x="520" y="26" text-anchor="middle" font-size="16" font-weight="bold">Base catalogue_denim - diagramme de classes</text>
+
+  <!-- DENIM -->
+  <rect x="20" y="50" width="250" height="160" fill="#f4f7fb" stroke="#23395d" stroke-width="1.5"/>
+  <text x="145" y="76" text-anchor="middle" font-weight="bold" font-size="15">DENIM</text>
+  <line x1="20" y1="88" x2="270" y2="88" stroke="#23395d"/>
+  <text x="30" y="110"><tspan font-weight="bold">+ ID_DENIM</tspan> : int «PK»</text>
+  <text x="30" y="134">+ MARQUE : varchar(100) [0..1]</text>
+  <text x="30" y="158">+ MATIERE : varchar(100) [0..1]</text>
+  <text x="30" y="182">+ PAYS_ORIGINE : varchar(100) [0..1]</text>
+
+  <!-- MODELE -->
+  <rect x="350" y="50" width="300" height="208" fill="#f4f7fb" stroke="#23395d" stroke-width="1.5"/>
+  <text x="500" y="76" text-anchor="middle" font-weight="bold" font-size="15">MODELE</text>
+  <line x1="350" y1="88" x2="650" y2="88" stroke="#23395d"/>
+  <text x="360" y="110"><tspan font-weight="bold">+ ID_MODELE</tspan> : int «PK»</text>
+  <text x="360" y="134">+ NOM_MODELE : varchar(100) [0..1]</text>
+  <text x="360" y="158">+ COUPE : varchar(50) [0..1]</text>
+  <text x="360" y="182">+ ANNEE_OU_EPOQUE : varchar(50) [0..1]</text>
+  <text x="360" y="206">+ CODE_TAMPON_BOUTON : varchar(20) [0..1]</text>
+  <text x="360" y="230" font-style="italic">+ ID_DENIM : int «FK»</text>
+
+  <!-- COTE -->
+  <rect x="730" y="50" width="290" height="232" fill="#f4f7fb" stroke="#23395d" stroke-width="1.5"/>
+  <text x="875" y="76" text-anchor="middle" font-weight="bold" font-size="15">COTE</text>
+  <line x1="730" y1="88" x2="1020" y2="88" stroke="#23395d"/>
+  <text x="740" y="110"><tspan font-weight="bold">+ ID_COTE</tspan> : int «PK»</text>
+  <text x="740" y="134">+ PRIX_MIN : decimal(8,2) [0..1]</text>
+  <text x="740" y="158">+ PRIX_MAX : decimal(8,2) [0..1]</text>
+  <text x="740" y="182">+ PRIX_MOYEN : decimal(8,2) [0..1]</text>
+  <text x="740" y="206">+ DATE_MAJ : date [0..1]</text>
+  <text x="740" y="230">+ SOURCE_PLATEFORME : varchar(50) [0..1]</text>
+  <text x="740" y="254" font-style="italic">+ ID_MODELE : int «FK»</text>
+
+  <!-- DENIM 1 -- 0..* MODELE -->
+  <line x1="270" y1="130" x2="350" y2="130" stroke="#333" stroke-width="1.3"/>
+  <text x="310" y="122" text-anchor="middle" font-size="11">décline</text>
+  <text x="276" y="146" font-size="12" font-weight="bold">1</text>
+  <text x="344" y="146" text-anchor="end" font-size="12" font-weight="bold">0..*</text>
+
+  <!-- MODELE 1 -- 0..* COTE -->
+  <line x1="650" y1="130" x2="730" y2="130" stroke="#333" stroke-width="1.3"/>
+  <text x="690" y="122" text-anchor="middle" font-size="11">est coté</text>
+  <text x="656" y="146" font-size="12" font-weight="bold">1</text>
+  <text x="724" y="146" text-anchor="end" font-size="12" font-weight="bold">0..*</text>
+</svg>
