@@ -12,9 +12,9 @@
   <text x="30" y="182">+ PAYS_ORIGINE : varchar(100) [0..1]</text>
 
   <!-- MODELE -->
-  <rect x="350" y="50" width="300" height="208" fill="#f4f7fb" stroke="#23395d" stroke-width="1.5"/>
-  <text x="500" y="76" text-anchor="middle" font-weight="bold" font-size="15">MODELE</text>
-  <line x1="350" y1="88" x2="650" y2="88" stroke="#23395d"/>
+  <rect x="350" y="50" width="320" height="208" fill="#f4f7fb" stroke="#23395d" stroke-width="1.5"/>
+  <text x="510" y="76" text-anchor="middle" font-weight="bold" font-size="15">MODELE</text>
+  <line x1="350" y1="88" x2="670" y2="88" stroke="#23395d"/>
   <text x="360" y="110"><tspan font-weight="bold">+ ID_MODELE</tspan> : int «PK»</text>
   <text x="360" y="134">+ NOM_MODELE : varchar(100) [0..1]</text>
   <text x="360" y="158">+ COUPE : varchar(50) [0..1]</text>
@@ -34,15 +34,15 @@
   <text x="740" y="230">+ SOURCE_PLATEFORME : varchar(50) [0..1]</text>
   <text x="740" y="254" font-style="italic">+ ID_MODELE : int «FK»</text>
 
-  <!-- DENIM 1 -- 0..* MODELE -->
+  <!-- Association DENIM - MODELE -->
   <line x1="270" y1="130" x2="350" y2="130" stroke="#333" stroke-width="1.3"/>
   <text x="310" y="122" text-anchor="middle" font-size="11">décline</text>
   <text x="276" y="146" font-size="12" font-weight="bold">1</text>
   <text x="344" y="146" text-anchor="end" font-size="12" font-weight="bold">0..*</text>
 
-  <!-- MODELE 1 -- 0..* COTE -->
-  <line x1="650" y1="130" x2="730" y2="130" stroke="#333" stroke-width="1.3"/>
-  <text x="690" y="122" text-anchor="middle" font-size="11">est coté</text>
-  <text x="656" y="146" font-size="12" font-weight="bold">1</text>
+  <!-- Association MODELE - COTE -->
+  <line x1="670" y1="130" x2="730" y2="130" stroke="#333" stroke-width="1.3"/>
+  <text x="700" y="122" text-anchor="middle" font-size="11">est coté</text>
+  <text x="676" y="146" font-size="12" font-weight="bold">1</text>
   <text x="724" y="146" text-anchor="end" font-size="12" font-weight="bold">0..*</text>
 </svg>
