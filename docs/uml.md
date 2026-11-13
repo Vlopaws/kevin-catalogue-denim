@@ -3,7 +3,9 @@
 Diagramme de classes des tables `DENIM`, `MODELE` et `COTE`, relevé sur la base TiDB
 (`SHOW CREATE TABLE`, 10/11/2026).
 
-![Diagramme de classes](uml.svg)
+![Diagramme de classes](uml.png)
+
+Version vectorielle : [uml.svg](uml.svg).
 
 Version texte (Mermaid, affichée par GitHub) :
 
